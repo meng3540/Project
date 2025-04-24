@@ -1,0 +1,13 @@
+import torch
+from yolov5 import detect
+
+# Check GPU availability
+assert torch.cuda.is_available(), "CUDA not available!"
+
+# Run YOLOv5 detection
+detect.run(
+    weights='yolov5s.pt',   # or yolov5n.pt, yolov5m.pt, etc.
+    source=0,                # 0 = webcam
+    imgsz=640,
+    device='0',              # '0' = GPU, '-1' = CPU
+)
