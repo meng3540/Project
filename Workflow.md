@@ -24,8 +24,13 @@ The project workflow to implement and test the object detection pipeline on the 
 PyTorch was selected as the deep learning framework due to its robust support for CUDA, dynamic graph computation, and ease of model deployment. OpenCV provided tools for image acquisition and preprocessing, also with CUDA-compatible operations on Jetson. YOLOv5 served as the object detection engine, known for its fast inference speed and good performance on embedded devices. Torchvision, NumPy, and matplotlib were installed to support auxiliary tasks such as image transformation, numerical computation, and visualization. Jetson-specific enhancements were supported by onnxruntime-gpu and libcusparselt, which can further accelerate inference through TensorRT-compatible formats. Finally, jtop from the jetson-stats package provided an effective real-time dashboard for monitoring GPU and memory performance.
 # Resources and References
 YOLOv5 GitHub Repository
+
 Ultralytics YOLOv5 Model Downloads
+
 NVIDIA Jetson Linux Developer Guide
+
 PyTorch for Jetson Installation Guide
+
 Jetson Stats GitHub
+
 ONNX Runtime for Jetson
