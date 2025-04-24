@@ -1,37 +1,54 @@
-```sudo nmcli device wifi connect <MY_WIFI_AP> password
+sudo nmcli device wifi connect <MY_WIFI_AP> password
+
 <MY_WIFI_PASSWORD>
+
 sudo apt update
 sudo apt install -y python3-pip git v4l-utils wget curl
+
 # Install snap and enable support
 sudo apt install snapd -y
 sudo ln -s /var/lib/snapd/snap /snap
+
 # Install Chromium
 sudo snap install chromium
+
 # Install Codium (VS Code alternative)
 sudo snap install codium --classic
+
 # Check which video device is connected
 ls /dev/video*
+
 # Use OpenCV to test which one works
 python3 -c "import cv2; [print(f'/dev/video{n}:', cv2.VideoCapture(n).isOpened()) for n in range(5)]"
+
 # Or launch NVIDIA’s camera test
 nvgstcapture-1.0 --cap-dev-node=/dev/video0
+
 # Clone YOLOv5
 git clone https://github.com/ultralytics/yolov5
 cd yolov5
+
 # Upgrade pip
 pip install -U pip
+
 # Install required Python packages
 pip install numpy==1.24.4 matplotlib opencv-python
+
 # Install YOLOv5 requirements
 pip install -r requirements.txt
+
 wget https://github.com/ultralytics/yolov5/releases/download/v6.0/yolov5s.pt
+
 # PyTorch for JetPack 6 (Python 3.10)
 pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torch-2.5.0a0+872d972e41.nv24.08-cp310-cp310-linux_aarch64.whl
 pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torchvision-0.20.0a0+afc54f7-cp310-cp310-linux_aarch64.whl
+
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 sudo apt-get -y install libcusparselt0 libcusparselt-dev
+
 pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/onnxruntime_gpu-1.20.0-cp310-cp310-linux_aarch64.whl
+
 sudo pip3 install -U jetson-stats
-sudo jtop```
+sudo jtop
